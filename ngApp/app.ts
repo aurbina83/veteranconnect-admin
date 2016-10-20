@@ -1,6 +1,6 @@
 namespace veteran_connect_admin {
 
-    angular.module('veteran_connect_admin', ['ui.router', 'ngResource', 'ui.bootstrap']).config((
+    angular.module('veteran_connect_admin', ['ui.router', 'ngResource', 'ui.bootstrap', 'ngToast']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider,

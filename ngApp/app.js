@@ -1,6 +1,6 @@
 var veteran_connect_admin;
 (function (veteran_connect_admin) {
-    angular.module('veteran_connect_admin', ['ui.router', 'ngResource', 'ui.bootstrap']).config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+    angular.module('veteran_connect_admin', ['ui.router', 'ngResource', 'ui.bootstrap', 'ngToast']).config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
         $stateProvider
             .state('home', {
             url: '/',

@@ -6,13 +6,16 @@ namespace veteran_connect_admin.Controllers {
             password: null
         }
 
-        constructor(private VerifyService: veteran_connect_admin.Services.VerifyService, private $state: ng.ui.IStateService){}
+        constructor(private VerifyService: veteran_connect_admin.Services.VerifyService, private $state: ng.ui.IStateService, private ngToast){}
 
         public login(){
             this.VerifyService.login(this.user).then((res)=>{
                 this.$state.go('about');
             }, (err) =>{
-                alert(err);
+                this.ngToast.create({
+                    className: 'warning',
+                    content: err
+                })
             })
         }
     }
@@ -30,7 +33,7 @@ namespace veteran_connect_admin.Controllers {
         }
 
         public users = [];
-        constructor(private VerifyService: veteran_connect_admin.Services.VerifyService, private $state: ng.ui.IStateService, private $window: ng.IWindowService){
+        constructor(private VerifyService: veteran_connect_admin.Services.VerifyService, private $state: ng.ui.IStateService, private $window: ng.IWindowService, private ngToast){
             console.log($window.screen.width);
             this.status = VerifyService.status;
             if (!this.status.admin) {
@@ -45,15 +48,25 @@ namespace veteran_connect_admin.Controllers {
                     this.user[e] = "";
                 }
             }, (err) =>{
-                alert(err);
+                this.ngToast.create({
+                    className: 'warning',
+                    content: err
+                })
             });
         }
 
         public verify(user){
             this.VerifyService.verify(user).then((res)=>{
+                this.ngToast.create({
+                    className: 'success',
+                    content: 'verified'
+                });
                 this.users = [];
             }, (err) =>{
-                alert(err);
+                this.ngToast.create({
+                    className: 'warning',
+                    content: err
+                })
             })
         }
 
