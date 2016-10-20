@@ -1,5 +1,8 @@
 <div class="verify">
-    <h3>Users</h3>
+    <div class="header">
+        <h3 class="h1">Users</h3><span class="sp"></span>
+        <button class="btn btn-danger button" ng-click="vm.">Logout</button>
+    </div>
     <div class="verify-input">
         <form ng-submit="vm.getUsers()" class="verify-input">
             <input type="text" placeholder="First Name" ng-model="vm.user.firstName">

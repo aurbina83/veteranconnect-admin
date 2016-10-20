@@ -25,7 +25,6 @@ var veteran_connect_admin;
         angular.module('veteran_connect_admin').controller('HomeController', HomeController);
     })(Controllers = veteran_connect_admin.Controllers || (veteran_connect_admin.Controllers = {}));
 })(veteran_connect_admin || (veteran_connect_admin = {}));
-var veteran_connect_admin;
 (function (veteran_connect_admin) {
     var Controllers;
     (function (Controllers) {
@@ -64,6 +63,9 @@ var veteran_connect_admin;
                 }, function (err) {
                     alert(err);
                 });
+            };
+            AboutController.prototype.logout = function () {
+                this.VerifyService.logout();
             };
             return AboutController;
         }());

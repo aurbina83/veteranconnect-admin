@@ -56,6 +56,10 @@ namespace veteran_connect_admin.Controllers {
                 alert(err);
             })
         }
+
+        public logout(){
+            this.VerifyService.logout();
+        }
     }
     angular.module('veteran_connect_admin').controller('AboutController', AboutController);
 }
