@@ -97,9 +97,9 @@ table th {
     border: 0;
   }
 
-  /*table thead {
+  table thead {
     display: none;
-  }*/
+  }
 
   table tr {
     margin-bottom: 10px;

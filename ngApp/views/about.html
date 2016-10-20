@@ -3,7 +3,7 @@
         <h3 class="h1">Users</h3><span class="sp"></span>
         <button class="btn btn-danger button" ng-click="vm.logout()">Logout</button>
     </div>
-    <div class="verify-input">
+    <div class="verify-input" ng-show="!vm.users[0]">
         <form ng-submit="vm.getUsers()" class="verify-input">
             <input type="text" placeholder="First Name" ng-model="vm.user.firstName">
             <input type="text" placeholder="Last Name" ng-model="vm.user.lastName">
