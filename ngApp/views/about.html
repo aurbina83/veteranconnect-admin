@@ -7,7 +7,6 @@
         <form ng-submit="vm.getUsers()" class="verify-input">
             <input type="text" placeholder="First Name" ng-model="vm.user.firstName">
             <input type="text" placeholder="Last Name" ng-model="vm.user.lastName">
-            <input type="text" placeholder="Branch" ng-model="vm.user.branch">
             <button class="btn btn-info" type="submit">Submit</button>
         </form>
     </div>
@@ -16,7 +15,6 @@
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Branch</th>
                 <th>Verify</th>
             </tr>
         </thead>
@@ -24,7 +22,6 @@
             <tr ng-repeat="u in vm.users">
                 <td data-label="First Name">{{u.firstName}}</td>
                 <td data-label="Last Name">{{u.lastName}}</td>
-                <td data-label="Branch">{{u.branch}}</td>
                 <td data-label="Verify"><button class="btn btn-danger" ng-click="vm.verify(u)">Verify</button></td>
             </tr>
         </tbody>

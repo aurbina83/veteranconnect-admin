@@ -5,7 +5,7 @@ import { User, IUserModel} from './model';
 
 export function find(req: express.Request, res: express.Response, next: Function) {
     console.log(req.query);
-    User.find({firstName: req.query.first, lastName: req.query.last, branch: req.query.branch, verified: null})
+    User.find({firstName: req.query.first, lastName: req.query.last, verified: null})
     .exec((err, user)=>{
         if (err) next (err);
         res.json(user);

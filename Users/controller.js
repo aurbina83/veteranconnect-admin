@@ -1,8 +1,8 @@
 "use strict";
-var model_1 = require('./model');
+var model_1 = require("./model");
 function find(req, res, next) {
     console.log(req.query);
-    model_1.User.find({ firstName: req.query.first, lastName: req.query.last, branch: req.query.branch, verified: null })
+    model_1.User.find({ firstName: req.query.first, lastName: req.query.last, verified: null })
         .exec(function (err, user) {
         if (err)
             next(err);
